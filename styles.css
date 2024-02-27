@@ -5,10 +5,11 @@
 }
 
 :root {
-	--white: hsl(0, o%, 100%);
+	--white: hsl(0, 0%, 100%);
 	--light-pink: hsl(277, 56%, 92%);
 	--grayish-purple: hsl(292, 16%, 49%);
 	--dark-purple: hsl(292, 42%, 14%);
+	--super-pink: hsl(282, 81%, 53%);
 }
 
 body {
@@ -16,16 +17,24 @@ body {
 	font-size: 16px;
 	font-weight: 400;
 	font-style: normal;
-	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	min-height: 100vh;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 100vh;
 	background: url(./assets/images/background-pattern-mobile.svg) no-repeat var(--light-pink);
 	z-index: 0;
 }
 
-main {
+.container {
 	padding: 20px;
 	background-color: white;
 	margin: 100px 20px;
@@ -41,11 +50,11 @@ main {
 }
 
 .img-star {
-	width: 20px;
+	width: 40px;
 }
 
 .title {
-	font-size: 32px;
+	font-size: 48px;
 	font-weight: 800;
 }
 
@@ -56,6 +65,10 @@ main {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.question:hover {
+	color: var(--super-pink);
 }
 
 .question-text {
@@ -71,4 +84,35 @@ main {
 
 .hidden {
 	display: none;
+}
+
+.attribution {
+	position: absolute;
+	bottom: 10px;
+	font-size: 11px;
+	text-align: center;
+	display: none;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 1440px) {
+	body {
+		background-color: azure;
+	}
+
+	main {
+		background: url(./assets/images/background-pattern-desktop.svg) no-repeat var(--light-pink);
+		width: 1440px;
+		min-height: initial;
+	}
+
+	.container {
+		max-width: 35%;
+	}
+
+	.attribution {
+		display: inline;
+	}
 }
